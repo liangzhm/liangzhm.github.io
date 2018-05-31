@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>liangzhm</title>
+  <title>和叶的空间</title>
   
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
-  <updated>2018-05-31T07:48:53.161Z</updated>
-  <id>http://yoursite.com/</id>
+  <link href="https://github.com/liangzhm/"/>
+  <updated>2018-05-31T07:51:51.384Z</updated>
+  <id>https://github.com/liangzhm/</id>
   
   <author>
     <name>liangzhm</name>
@@ -18,19 +18,19 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="http://yoursite.com/2018/05/30/hello-world/"/>
-    <id>http://yoursite.com/2018/05/30/hello-world/</id>
+    <link href="https://github.com/liangzhm/2018/05/30/hello-world/"/>
+    <id>https://github.com/liangzhm/2018/05/30/hello-world/</id>
     <published>2018-05-30T09:13:19.364Z</published>
-    <updated>2018-05-31T07:48:53.161Z</updated>
+    <updated>2018-05-31T07:51:51.384Z</updated>
     
-    <content type="html"><![CDATA[<p>写下这个标题的时候，我已经熟练的完成了从jekyll博客到hexo博客的转换。为了不会遗忘，把日常总结的知识点总结在此博客中。不知道为什么，折腾了一上午，valine评论系统还是不能用。</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<p>写下这个标题的时候，我已经熟练的完成了从jekyll博客到hexo博客的转换。<br>为了不会遗忘，把日常总结的知识点总结在此博客中。不知道为什么，折腾了一上午，valine评论系统还是不能用。<br>以后有时间再弄吧，hexo的命令也不删了，留着了。</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;写下这个标题的时候，我已经熟练的完成了从jekyll博客到hexo博客的转换。为了不会遗忘，把日常总结的知识点总结在此博客中。不知道为什么，折腾了一上午，valine评论系统还是不能用。&lt;/p&gt;
-&lt;h2 id=&quot;Quick-Start&quot;&gt;&lt;a href=&quot;#Quick-St
+        &lt;p&gt;写下这个标题的时候，我已经熟练的完成了从jekyll博客到hexo博客的转换。&lt;br&gt;为了不会遗忘，把日常总结的知识点总结在此博客中。不知道为什么，折腾了一上午，valine评论系统还是不能用。&lt;br&gt;以后有时间再弄吧，hexo的命令也不删了，留着了。&lt;/p&gt;
+&lt;h2 id
       
     
     </summary>
