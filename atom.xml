@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://github.com/liangzhm/"/>
-  <updated>2018-05-31T07:51:51.384Z</updated>
+  <updated>2019-01-16T10:05:45.521Z</updated>
   <id>https://github.com/liangzhm/</id>
   
   <author>
@@ -17,10 +17,52 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>test</title>
+    <link href="https://github.com/liangzhm/2019/01/16/test/"/>
+    <id>https://github.com/liangzhm/2019/01/16/test/</id>
+    <published>2019-01-16T10:04:36.000Z</published>
+    <updated>2019-01-16T10:05:45.521Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="测试换电脑后，博客迁移情况"><a href="#测试换电脑后，博客迁移情况" class="headerlink" title="测试换电脑后，博客迁移情况"></a>测试换电脑后，博客迁移情况</h2>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;测试换电脑后，博客迁移情况&quot;&gt;&lt;a href=&quot;#测试换电脑后，博客迁移情况&quot; class=&quot;headerlink&quot; title=&quot;测试换电脑后，博客迁移情况&quot;&gt;&lt;/a&gt;测试换电脑后，博客迁移情况&lt;/h2&gt;
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="https://github.com/liangzhm/2018/09/05/%E7%99%BB%E5%BD%95%E9%89%B4%E6%9D%83%E9%80%BB%E8%BE%91%E6%A2%B3%E7%90%86.2018-08-14/"/>
+    <id>https://github.com/liangzhm/2018/09/05/登录鉴权逻辑梳理.2018-08-14/</id>
+    <published>2018-09-05T01:23:17.534Z</published>
+    <updated>2018-08-14T09:16:32.958Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="登录鉴权步骤"><a href="#登录鉴权步骤" class="headerlink" title="登录鉴权步骤"></a>登录鉴权步骤</h1><h2 id="1-路由里写鉴权"><a href="#1-路由里写鉴权" class="headerlink" title="1. 路由里写鉴权"></a>1. 路由里写鉴权</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">router.post(&apos;/api/login&apos;, app.passport.authenticate(&apos;local&apos;, &#123; successRedirect: &apos;/api/login/authCallback&apos; &#125;));</span><br></pre></td></tr></table></figure><h2 id="2-config-plugin-js-同时安装egg-passport模块"><a href="#2-config-plugin-js-同时安装egg-passport模块" class="headerlink" title="2. // config/plugin.js  同时安装egg-passport模块"></a>2. // config/plugin.js  同时安装egg-passport模块</h2><p>exports.passport = {<br>  enable: true,<br>  package: ‘egg-passport’,<br>};</p><h2 id="3-app-js里导入-导入鉴权逻辑"><a href="#3-app-js里导入-导入鉴权逻辑" class="headerlink" title="3.app.js里导入 导入鉴权逻辑"></a>3.app.js里导入 导入鉴权逻辑</h2><p>module.exports = app =&gt; {<br>    require(‘./init/session’)(app)<br>    require(‘./init/passLocal’)(app)<br>};</p><h2 id="4-init-passLocal-js-里加入鉴权的逻辑"><a href="#4-init-passLocal-js-里加入鉴权的逻辑" class="headerlink" title="4.init/passLocal.js 里加入鉴权的逻辑"></a>4.init/passLocal.js 里加入鉴权的逻辑</h2><h2 id="5-init-session-js-里有model为Session的函数，所以要新建model在app文件夹下，new-Schema"><a href="#5-init-session-js-里有model为Session的函数，所以要新建model在app文件夹下，new-Schema" class="headerlink" title="5.init/session.js 里有model为Session的函数，所以要新建model在app文件夹下，new Schema({ })"></a>5.init/session.js 里有model为Session的函数，所以要新建model在app文件夹下，new Schema({ })</h2><h2 id="6-调试时发现post请求，但是url后面还是带着参数，仔细查看文档，原来是axios请求参数为data时会自动序列化为json格式的，在post-的body里，export-const-fqLogin"><a href="#6-调试时发现post请求，但是url后面还是带着参数，仔细查看文档，原来是axios请求参数为data时会自动序列化为json格式的，在post-的body里，export-const-fqLogin" class="headerlink" title="6.调试时发现post请求，但是url后面还是带着参数，仔细查看文档，原来是axios请求参数为data时会自动序列化为json格式的，在post 的body里，export const fqLogin = {"></a>6.调试时发现post请求，但是url后面还是带着参数，仔细查看文档，原来是axios请求参数为data时会自动序列化为json格式的，在post 的body里，export const fqLogin = {</h2><p>  async login(data) { // 注意: 这个地方要写data，axios会序列化为json<br>     return await http({<br>       url: ‘/myApi/api/login’,<br>       method: ‘post’,<br>       data<br>     })<br>  }<br>}</p><h2 id="7-init-passLocal-js里面。先去验证req-body里验证码和session-code-是否一致，如果一致，才往下走查找用户的逻辑"><a href="#7-init-passLocal-js里面。先去验证req-body里验证码和session-code-是否一致，如果一致，才往下走查找用户的逻辑" class="headerlink" title="7. init/passLocal.js里面。先去验证req.body里验证码和session.code 是否一致，如果一致，才往下走查找用户的逻辑"></a>7. init/passLocal.js里面。先去验证req.body里验证码和session.code 是否一致，如果一致，才往下走查找用户的逻辑</h2><h2 id="8-查找用户时，调用ctx-service-users-login-user-服务，于是，在service下面建users-js文件，里面其实就是调用数据库方法查找数据，如果找到了，那么登录成功。自此，鉴权登录逻辑完成。"><a href="#8-查找用户时，调用ctx-service-users-login-user-服务，于是，在service下面建users-js文件，里面其实就是调用数据库方法查找数据，如果找到了，那么登录成功。自此，鉴权登录逻辑完成。" class="headerlink" title="8. 查找用户时，调用ctx.service.users.login(user) 服务，于是，在service下面建users.js文件，里面其实就是调用数据库方法查找数据，如果找到了，那么登录成功。自此，鉴权登录逻辑完成。"></a>8. 查找用户时，调用ctx.service.users.login(user) 服务，于是，在service下面建users.js文件，里面其实就是调用数据库方法查找数据，如果找到了，那么登录成功。自此，鉴权登录逻辑完成。</h2>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;登录鉴权步骤&quot;&gt;&lt;a href=&quot;#登录鉴权步骤&quot; class=&quot;headerlink&quot; title=&quot;登录鉴权步骤&quot;&gt;&lt;/a&gt;登录鉴权步骤&lt;/h1&gt;&lt;h2 id=&quot;1-路由里写鉴权&quot;&gt;&lt;a href=&quot;#1-路由里写鉴权&quot; class=&quot;headerlink&quot; 
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>Hello World</title>
-    <link href="https://github.com/liangzhm/2018/05/30/hello-world/"/>
-    <id>https://github.com/liangzhm/2018/05/30/hello-world/</id>
-    <published>2018-05-30T09:13:19.364Z</published>
+    <link href="https://github.com/liangzhm/2018/09/05/hello-world/"/>
+    <id>https://github.com/liangzhm/2018/09/05/hello-world/</id>
+    <published>2018-09-05T01:23:17.522Z</published>
     <updated>2018-05-31T07:51:51.384Z</updated>
     
     <content type="html"><![CDATA[<p>写下这个标题的时候，我已经熟练的完成了从jekyll博客到hexo博客的转换。<br>为了不会遗忘，把日常总结的知识点总结在此博客中。不知道为什么，折腾了一上午，valine评论系统还是不能用。<br>以后有时间再弄吧，hexo的命令也不删了，留着了。</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>]]></content>
