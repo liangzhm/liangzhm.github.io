@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://github.com/liangzhm/"/>
-  <updated>2019-02-01T10:34:09.828Z</updated>
+  <updated>2019-02-02T09:28:18.554Z</updated>
   <id>https://github.com/liangzhm/</id>
   
   <author>
@@ -17,19 +17,20 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>test</title>
-    <link href="https://github.com/liangzhm/2019/01/16/test/"/>
-    <id>https://github.com/liangzhm/2019/01/16/test/</id>
-    <published>2019-01-16T10:04:36.000Z</published>
-    <updated>2019-02-01T10:34:09.828Z</updated>
+    <title>2019，对自己说加油</title>
+    <link href="https://github.com/liangzhm/2019/02/02/2019%EF%BC%8C%E5%AF%B9%E8%87%AA%E5%B7%B1%E8%AF%B4%E5%8A%A0%E6%B2%B9/"/>
+    <id>https://github.com/liangzhm/2019/02/02/2019，对自己说加油/</id>
+    <published>2019-02-02T09:24:58.000Z</published>
+    <updated>2019-02-02T09:28:18.554Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="测试换电脑后，博客迁移情况-哈哈哈-难道是迁移成功了？？？"><a href="#测试换电脑后，博客迁移情况-哈哈哈-难道是迁移成功了？？？" class="headerlink" title="测试换电脑后，博客迁移情况 哈哈哈 难道是迁移成功了？？？"></a>测试换电脑后，博客迁移情况 哈哈哈 难道是迁移成功了？？？</h2><p>#2019发大财</p><h2 id="再测试一遍"><a href="#再测试一遍" class="headerlink" title="再测试一遍"></a>再测试一遍</h2><h3 id="测试第三遍"><a href="#测试第三遍" class="headerlink" title="测试第三遍"></a>测试第三遍</h3>]]></content>
+    <content type="html"><![CDATA[<p>转眼间，来到新的工作单位已经将近半年了，在这段时间里，学到了很多，也得到了很多，心态比以前成熟了许多。希望2019，工作能上一个台阶，也希望我身边所有人越来越好。</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h2 id=&quot;测试换电脑后，博客迁移情况-哈哈哈-难道是迁移成功了？？？&quot;&gt;&lt;a href=&quot;#测试换电脑后，博客迁移情况-哈哈哈-难道是迁移成功了？？？&quot; class=&quot;headerlink&quot; title=&quot;测试换电脑后，博客迁移情况 哈哈哈 难道是迁移成功了？？？&quot;&gt;&lt;/a
+        &lt;p&gt;转眼间，来到新的工作单位已经将近半年了，在这段时间里，学到了很多，也得到了很多，心态比以前成熟了许多。希望2019，工作能上一个台阶，也希望我身边所有人越来越好。&lt;/p&gt;
+
       
     
     </summary>
@@ -39,8 +40,8 @@
   
   <entry>
     <title>后台系统登录鉴权步骤记录</title>
-    <link href="https://github.com/liangzhm/2018/06/16/%E7%99%BB%E5%BD%95%E9%89%B4%E6%9D%83%E9%80%BB%E8%BE%91%E6%A2%B3%E7%90%86.2018-08-14/"/>
-    <id>https://github.com/liangzhm/2018/06/16/登录鉴权逻辑梳理.2018-08-14/</id>
+    <link href="https://github.com/liangzhm/2018/06/16/%E5%90%8E%E5%8F%B0%E7%B3%BB%E7%BB%9F%E7%99%BB%E5%BD%95%E9%89%B4%E6%9D%83%E6%AD%A5%E9%AA%A4%E8%AE%B0%E5%BD%95/"/>
+    <id>https://github.com/liangzhm/2018/06/16/后台系统登录鉴权步骤记录/</id>
     <published>2018-06-16T10:04:36.000Z</published>
     <updated>2019-02-01T10:34:09.832Z</updated>
     
@@ -51,28 +52,6 @@
       
       
         &lt;h1 id=&quot;登录鉴权步骤&quot;&gt;&lt;a href=&quot;#登录鉴权步骤&quot; class=&quot;headerlink&quot; title=&quot;登录鉴权步骤&quot;&gt;&lt;/a&gt;登录鉴权步骤&lt;/h1&gt;&lt;h2 id=&quot;1-路由里写鉴权&quot;&gt;&lt;a href=&quot;#1-路由里写鉴权&quot; class=&quot;headerlink&quot; 
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="https://github.com/liangzhm/2018/01/16/hello-world/"/>
-    <id>https://github.com/liangzhm/2018/01/16/hello-world/</id>
-    <published>2018-01-16T10:04:36.000Z</published>
-    <updated>2019-02-01T10:34:09.823Z</updated>
-    
-    <content type="html"><![CDATA[<p>写下这个标题的时候，我已经熟练的完成了从jekyll博客到hexo博客的转换。<br>为了不会遗忘，把日常总结的知识点总结在此博客中。不知道为什么，折腾了一上午，valine评论系统还是不能用。<br>以后有时间再弄吧，hexo的命令也不删了，留着了。</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;写下这个标题的时候，我已经熟练的完成了从jekyll博客到hexo博客的转换。&lt;br&gt;为了不会遗忘，把日常总结的知识点总结在此博客中。不知道为什么，折腾了一上午，valine评论系统还是不能用。&lt;br&gt;以后有时间再弄吧，hexo的命令也不删了，留着了。&lt;/p&gt;
-&lt;h2 id
       
     
     </summary>
