@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://github.com/liangzhm/"/>
-  <updated>2019-02-02T09:35:36.205Z</updated>
+  <updated>2019-02-02T09:47:26.221Z</updated>
   <id>https://github.com/liangzhm/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://github.com/liangzhm/2019/02/02/%E6%B5%8B%E8%AF%95%E5%8D%9A%E5%AE%A2%E6%AD%A3%E5%B8%B8%E5%90%A6/"/>
     <id>https://github.com/liangzhm/2019/02/02/测试博客正常否/</id>
     <published>2019-02-02T09:35:19.000Z</published>
-    <updated>2019-02-02T09:35:36.205Z</updated>
+    <updated>2019-02-02T09:47:26.221Z</updated>
     
     <content type="html"><![CDATA[<p>哈哈，是正常的</p>]]></content>
     
@@ -43,7 +43,7 @@
     <link href="https://github.com/liangzhm/2019/02/02/2019%EF%BC%8C%E5%AF%B9%E8%87%AA%E5%B7%B1%E8%AF%B4%E5%8A%A0%E6%B2%B9/"/>
     <id>https://github.com/liangzhm/2019/02/02/2019，对自己说加油/</id>
     <published>2019-02-02T09:24:58.000Z</published>
-    <updated>2019-02-02T09:28:18.554Z</updated>
+    <updated>2019-02-02T09:47:26.216Z</updated>
     
     <content type="html"><![CDATA[<p>转眼间，来到新的工作单位已经将近半年了，在这段时间里，学到了很多，也得到了很多，心态比以前成熟了许多。希望2019，工作能上一个台阶，也希望我身边所有人越来越好。</p>]]></content>
     
@@ -65,7 +65,7 @@
     <link href="https://github.com/liangzhm/2018/06/16/%E5%90%8E%E5%8F%B0%E7%B3%BB%E7%BB%9F%E7%99%BB%E5%BD%95%E9%89%B4%E6%9D%83%E6%AD%A5%E9%AA%A4%E8%AE%B0%E5%BD%95/"/>
     <id>https://github.com/liangzhm/2018/06/16/后台系统登录鉴权步骤记录/</id>
     <published>2018-06-16T10:04:36.000Z</published>
-    <updated>2019-02-01T10:34:09.832Z</updated>
+    <updated>2019-02-02T09:47:26.219Z</updated>
     
     <content type="html"><![CDATA[<h1 id="登录鉴权步骤"><a href="#登录鉴权步骤" class="headerlink" title="登录鉴权步骤"></a>登录鉴权步骤</h1><h2 id="1-路由里写鉴权"><a href="#1-路由里写鉴权" class="headerlink" title="1. 路由里写鉴权"></a>1. 路由里写鉴权</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">router.post(&apos;/api/login&apos;, app.passport.authenticate(&apos;local&apos;, &#123; successRedirect: &apos;/api/login/authCallback&apos; &#125;));</span><br></pre></td></tr></table></figure><h2 id="2-config-plugin-js-同时安装egg-passport模块"><a href="#2-config-plugin-js-同时安装egg-passport模块" class="headerlink" title="2. // config/plugin.js  同时安装egg-passport模块"></a>2. // config/plugin.js  同时安装egg-passport模块</h2><p>exports.passport = {<br>  enable: true,<br>  package: ‘egg-passport’,<br>};</p><h2 id="3-app-js里导入-导入鉴权逻辑"><a href="#3-app-js里导入-导入鉴权逻辑" class="headerlink" title="3.app.js里导入 导入鉴权逻辑"></a>3.app.js里导入 导入鉴权逻辑</h2><p>module.exports = app =&gt; {<br>    require(‘./init/session’)(app)<br>    require(‘./init/passLocal’)(app)<br>};</p><h2 id="4-init-passLocal-js-里加入鉴权的逻辑"><a href="#4-init-passLocal-js-里加入鉴权的逻辑" class="headerlink" title="4.init/passLocal.js 里加入鉴权的逻辑"></a>4.init/passLocal.js 里加入鉴权的逻辑</h2><h2 id="5-init-session-js-里有model为Session的函数，所以要新建model在app文件夹下，new-Schema"><a href="#5-init-session-js-里有model为Session的函数，所以要新建model在app文件夹下，new-Schema" class="headerlink" title="5.init/session.js 里有model为Session的函数，所以要新建model在app文件夹下，new Schema({ })"></a>5.init/session.js 里有model为Session的函数，所以要新建model在app文件夹下，new Schema({ })</h2><h2 id="6-调试时发现post请求，但是url后面还是带着参数，仔细查看文档，原来是axios请求参数为data时会自动序列化为json格式的，在post-的body里，export-const-fqLogin"><a href="#6-调试时发现post请求，但是url后面还是带着参数，仔细查看文档，原来是axios请求参数为data时会自动序列化为json格式的，在post-的body里，export-const-fqLogin" class="headerlink" title="6.调试时发现post请求，但是url后面还是带着参数，仔细查看文档，原来是axios请求参数为data时会自动序列化为json格式的，在post 的body里，export const fqLogin = {"></a>6.调试时发现post请求，但是url后面还是带着参数，仔细查看文档，原来是axios请求参数为data时会自动序列化为json格式的，在post 的body里，export const fqLogin = {</h2><p>  async login(data) { // 注意: 这个地方要写data，axios会序列化为json<br>     return await http({<br>       url: ‘/myApi/api/login’,<br>       method: ‘post’,<br>       data<br>     })<br>  }<br>}</p><h2 id="7-init-passLocal-js里面。先去验证req-body里验证码和session-code-是否一致，如果一致，才往下走查找用户的逻辑"><a href="#7-init-passLocal-js里面。先去验证req-body里验证码和session-code-是否一致，如果一致，才往下走查找用户的逻辑" class="headerlink" title="7. init/passLocal.js里面。先去验证req.body里验证码和session.code 是否一致，如果一致，才往下走查找用户的逻辑"></a>7. init/passLocal.js里面。先去验证req.body里验证码和session.code 是否一致，如果一致，才往下走查找用户的逻辑</h2><h2 id="8-查找用户时，调用ctx-service-users-login-user-服务，于是，在service下面建users-js文件，里面其实就是调用数据库方法查找数据，如果找到了，那么登录成功。自此，鉴权登录逻辑完成。"><a href="#8-查找用户时，调用ctx-service-users-login-user-服务，于是，在service下面建users-js文件，里面其实就是调用数据库方法查找数据，如果找到了，那么登录成功。自此，鉴权登录逻辑完成。" class="headerlink" title="8. 查找用户时，调用ctx.service.users.login(user) 服务，于是，在service下面建users.js文件，里面其实就是调用数据库方法查找数据，如果找到了，那么登录成功。自此，鉴权登录逻辑完成。"></a>8. 查找用户时，调用ctx.service.users.login(user) 服务，于是，在service下面建users.js文件，里面其实就是调用数据库方法查找数据，如果找到了，那么登录成功。自此，鉴权登录逻辑完成。</h2>]]></content>
     
