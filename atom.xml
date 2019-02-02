@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://github.com/liangzhm/"/>
-  <updated>2019-02-02T09:28:18.554Z</updated>
+  <updated>2019-02-02T09:35:36.205Z</updated>
   <id>https://github.com/liangzhm/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>测试博客正常否</title>
+    <link href="https://github.com/liangzhm/2019/02/02/%E6%B5%8B%E8%AF%95%E5%8D%9A%E5%AE%A2%E6%AD%A3%E5%B8%B8%E5%90%A6/"/>
+    <id>https://github.com/liangzhm/2019/02/02/测试博客正常否/</id>
+    <published>2019-02-02T09:35:19.000Z</published>
+    <updated>2019-02-02T09:35:36.205Z</updated>
+    
+    <content type="html"><![CDATA[<p>哈哈，是正常的</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;哈哈，是正常的&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>2019，对自己说加油</title>
