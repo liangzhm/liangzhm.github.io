@@ -9,16 +9,19 @@
 </ul>
 <p>浏览器将cors请求分成两类，简单请求和非简单请求。get和post都是简单请求。</p>
 <h2 id="简单请求："><a href="#简单请求：" class="headerlink" title="简单请求："></a>简单请求：</h2><ul>
-<li>1.在Request Headers中会自动添加一个额外的Origin头部，其中包含请求页面的资源信息（协议，域名和端口），以便服务器根据这个头部信息决定是否给予响应。<br>比如，我在本地搭了一套前端环境，搭了一套nodejs后端环境，前端请求页面是<a href="http://localhost:9898，服务器地址是http://localhost:7001" target="_blank" rel="noopener">http://localhost:9898，服务器地址是http://localhost:7001</a> 。如下图。</li>
+<li>1.在Request Headers中会自动添加一个额外的Origin头部，其中包含请求页面的资源信息（协议，域名和端口），以便服务器根据这个头部信息决定是否给予响应。比如，我在本地搭了一套前端环境，同时搭了一套nodejs后端环境，前端请求页面是<a href="http://localhost:9898" target="_blank" rel="noopener">http://localhost:9898</a>, 后端服务器地址是<a href="http://localhost:7001" target="_blank" rel="noopener">http://localhost:7001</a> 。<br>list接口为<a href="http://localhost:7001/user/list" target="_blank" rel="noopener">http://localhost:7001/user/list</a>, 前端页面发出请求后，控制台request headers如下图。</li>
 </ul>
 <p><img src="https://liangzhm.github.io/2019/02/21/Cors%E4%BB%8B%E7%BB%8D%E5%8F%8A%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95/1.jpg" alt="1"></p>
 <ul>
-<li><p>2.如果服务器认为这个请求可以接受，就在Access-Control-Allow-Origin 头<br>部中回应相同的源信息。如下图所示。Access-Control-Allow-Origin代表可以同意的跨域请求，这个字段也能设置为*号，代表同意任意的跨域请求。<br><img src="https://liangzhm.github.io/2019/02/21/Cors%E4%BB%8B%E7%BB%8D%E5%8F%8A%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95/2.jpg" alt="2"></p>
+<li><p>2.如果服务器认为这个请求可以接受，就在response headers里的Access-Control-Allow-Origin 头部中回应相同的源信息。如下图所示。Access-Control-Allow-Origin代表可以同意的跨域请求，这个字段也能设置为*号，代表同意任意的跨域请求。<br><img src="https://liangzhm.github.io/2019/02/21/Cors%E4%BB%8B%E7%BB%8D%E5%8F%8A%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95/2.jpg" alt="2"></p>
 </li>
-<li><p>3.如果没有这个头部或者有这个头部但是源信息不匹配，浏览器就会驳回请求。<br>正常情况下，浏览器会处理请求。这里需要注意的是，请求和响应都不包含 cookie 信息。<br>当前请求的域名是localhost:9898，但是服务器端返回的Access-Control-<br>Allow-Origin是localhost：9899，浏览器发现不一致，就会报错，报错信息中也显示localhost：9898不允许接入访问（也就是跨域了）。<br><img src="https://liangzhm.github.io/2019/02/21/Cors%E4%BB%8B%E7%BB%8D%E5%8F%8A%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95/3.jpg" alt="3"><br>报错信息如下图所示：<br><img src="https://liangzhm.github.io/2019/02/21/Cors%E4%BB%8B%E7%BB%8D%E5%8F%8A%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95/4.png" alt="4"></p>
+<li><p>3.如果没有这个头部或者有这个头部但是源信息不匹配，浏览器就会驳回请求。正常情况下，浏览器会处理请求。这里需要注意的是，请求和响应都不包含 cookie 信息。如果当前请求的域名是localhost:9898，但是服务器端返回的Access-Control-Allow-Origin是localhost：9899的话，浏览器发现不一致了，就会报错，报错信息中也显示localhost：9898不允许接入访问（也就是跨域了）。请求头和响应头如下图所示。<br><img src="https://liangzhm.github.io/2019/02/21/Cors%E4%BB%8B%E7%BB%8D%E5%8F%8A%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95/3.jpg" alt="3"><br>报错信息如下图所示：<br><img src="https://liangzhm.github.io/2019/02/21/Cors%E4%BB%8B%E7%BB%8D%E5%8F%8A%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95/4.png" alt="4"></p>
 </li>
-<li>4.CORS请求是默认不发送Cookie信息的，如果要把cookie 信息发送到服务<br>器，那么需要在ajax 请求时设置 xhr 的属性 withCredentials 为 true，而且服务器端也需要设置响应头部 Access-Control-Allow-Credentials: true。前端代码如下所示：<br>var xhr = new XMLHttpRequest();<br>xhr.withCredentials = true;</li>
-<li>5.需要注意的是，如果要发送cookie，Access-Control-Allow-Origin就不能<br>设置为*号了，必须指定为与请求的网页一致的域名。而且cookie也是遵循同源策略的，只有在服务器配置Access-Control-Allow-Origin设置过的域名的cookie才会上传，其他域名的cookie并不会上传。</li>
+<li><p>4.CORS请求是默认不发送Cookie信息的，如果要把cookie 信息发送到服务器，那么需要在ajax 请求时设置 xhr 的属性 withCredentials 为 true，而且服务器端也需要设置响应头部 Access-Control-Allow-Credentials: true。前端代码如下所示：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var xhr = new XMLHttpRequest();</span><br><span class="line">xhr.withCredentials = true;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>5.需要注意的是，如果要发送cookie，Access-Control-Allow-Origin就不能设置为*号了，必须指定为与请求的网页一致的域名。而且cookie也是遵循同源策略的，只有在服务器配置Access-Control-Allow-Origin设置过的域名的cookie才会上传，其他域名的cookie并不会上传。</p>
+</li>
 </ul>
 <h2 id="非简单请求："><a href="#非简单请求：" class="headerlink" title="非简单请求："></a>非简单请求：</h2><p>比如请求方法是put或者delete。</p>
 <blockquote>
@@ -61,7 +64,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">axios.defaults.withCredentials = true; //让axios自动发送服务器cookie</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-</div></article></div></main><footer><div class="paginator"><a href="/2019/02/02/针对git多账号ssh-key的设置方法（github和gitlab）/" class="next">NEXT</a></div><div id="comment"></div><div id="comment2"><script src="https://cdnjs.cat.net/ajax/libs/jquery/3.2.1/jquery.min.js"></script><script id="dsq-count-scr1" src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script><script id="dsq-count-scr" src="//unpkg.com/valine/dist/Valine.min.js"></script><script>(function() {
+<h2 id="结束"><a href="#结束" class="headerlink" title="结束"></a>结束</h2></div></article></div></main><footer><div class="paginator"><a href="/2019/02/02/针对git多账号ssh-key的设置方法（github和gitlab）/" class="next">NEXT</a></div><div id="comment"></div><div id="comment2"><script src="https://cdnjs.cat.net/ajax/libs/jquery/3.2.1/jquery.min.js"></script><script id="dsq-count-scr1" src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script><script id="dsq-count-scr" src="//unpkg.com/valine/dist/Valine.min.js"></script><script>(function() {
     new Valine({
         el: '#comment',
         notify: false,
