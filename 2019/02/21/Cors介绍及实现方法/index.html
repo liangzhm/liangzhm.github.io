@@ -6,14 +6,14 @@
 </ol>
 </li>
 </ul>
-<p><img src="/liangzhm/2019/02/21/Cors介绍及实现方法/1.jpg" alt="1"></p>
+<p><img src="https://liangzhm.github.io/2019/02/21/Cors%E4%BB%8B%E7%BB%8D%E5%8F%8A%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95/1.jpg" alt="1"></p>
 <ul>
 <li><ol start="2">
-<li>如果服务器认为这个请求可以接受，就在Access-Control-Allow-Origin 头<br>部中回应相同的源信息。如下图所示。Access-Control-Allow-Origin代表可以同意的跨域请求，这个字段也能设置为*号，代表同意任意的跨域请求。<br><img src="/liangzhm/2019/02/21/Cors介绍及实现方法/2.jpg" alt="2"></li>
+<li>如果服务器认为这个请求可以接受，就在Access-Control-Allow-Origin 头<br>部中回应相同的源信息。如下图所示。Access-Control-Allow-Origin代表可以同意的跨域请求，这个字段也能设置为*号，代表同意任意的跨域请求。<br><img src="https://liangzhm.github.io/2019/02/21/Cors%E4%BB%8B%E7%BB%8D%E5%8F%8A%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95/2.jpg" alt="2"></li>
 </ol>
 </li>
 <li><ol start="3">
-<li>如果没有这个头部或者有这个头部但是源信息不匹配，浏览器就会驳回请求。<br>正常情况下，浏览器会处理请求。这里需要注意的是，请求和响应都不包含 cookie 信息。<br>当前请求的域名是localhost:9898，但是服务器端返回的Access-Control-<br>Allow-Origin是localhost：9899，浏览器发现不一致，就会报错，报错信息中也显示localhost：9898不允许接入访问（也就是跨域了）。<br><img src="/liangzhm/2019/02/21/Cors介绍及实现方法/3.jpg" alt="3"><br>报错信息如下图所示：<br><img src="/liangzhm/2019/02/21/Cors介绍及实现方法/4.png" alt="4"></li>
+<li>如果没有这个头部或者有这个头部但是源信息不匹配，浏览器就会驳回请求。<br>正常情况下，浏览器会处理请求。这里需要注意的是，请求和响应都不包含 cookie 信息。<br>当前请求的域名是localhost:9898，但是服务器端返回的Access-Control-<br>Allow-Origin是localhost：9899，浏览器发现不一致，就会报错，报错信息中也显示localhost：9898不允许接入访问（也就是跨域了）。<br><img src="https://liangzhm.github.io/2019/02/21/Cors%E4%BB%8B%E7%BB%8D%E5%8F%8A%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95/3.jpg" alt="3"><br>报错信息如下图所示：<br><img src="https://liangzhm.github.io/2019/02/21/Cors%E4%BB%8B%E7%BB%8D%E5%8F%8A%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95/4.png" alt="4"></li>
 </ol>
 </li>
 <li><ol start="4">
@@ -32,7 +32,7 @@
 </ol>
 </li>
 </ul>
-<p>浏览器在发送真正的请求之前，会先发送一个“预检”请求给服务器。如下图所示，在我点击删除按钮后，浏览器发出两个remove请求。<br> <img src="/liangzhm/2019/02/21/Cors介绍及实现方法/5.jpg" alt="5"><br>第一个remove请求就是预检请求，这个请求使用 OPTIONS 方法，表示是来询问的。发送的头信息如下图所示。<br> <img src="/liangzhm/2019/02/21/Cors介绍及实现方法/6.jpg" alt="6"><br>Origin：表示来自哪个域名，与简单请求是相同的。<br>Access-Control-Request-Method: （必须）请求自身使用的方法，当前是delete。<br>Access-Control-Request-Headers: （可选）自定义的头部信息，多个头部以逗号分隔，默认是conten-type。</p>
+<p>浏览器在发送真正的请求之前，会先发送一个“预检”请求给服务器。如下图所示，在我点击删除按钮后，浏览器发出两个remove请求。<br> <img src="https://liangzhm.github.io/2019/02/21/Cors%E4%BB%8B%E7%BB%8D%E5%8F%8A%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95/5.jpg" alt="5"><br>第一个remove请求就是预检请求，这个请求使用 OPTIONS 方法，表示是来询问的。发送的头信息如下图所示。<br> <img src="https://liangzhm.github.io/2019/02/21/Cors%E4%BB%8B%E7%BB%8D%E5%8F%8A%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95/6.jpg" alt="6"><br>Origin：表示来自哪个域名，与简单请求是相同的。<br>Access-Control-Request-Method: （必须）请求自身使用的方法，当前是delete。<br>Access-Control-Request-Headers: （可选）自定义的头部信息，多个头部以逗号分隔，默认是conten-type。</p>
 <ul>
 <li><ol start="2">
 <li>预检请求得到的回应</li>
@@ -46,7 +46,7 @@
 </ol>
 </li>
 </ul>
-<p>一旦服务器通过了预检请求，也就是匹配上了，就会正常发出cors请求，和简单请求一样。如下图所示。<br> <img src="/liangzhm/2019/02/21/Cors介绍及实现方法/7.jpg" alt="7"><br>再次执行删除操作，还是会发出两次remove请求。</p>
+<p>一旦服务器通过了预检请求，也就是匹配上了，就会正常发出cors请求，和简单请求一样。如下图所示。<br> <img src="https://liangzhm.github.io/2019/02/21/Cors%E4%BB%8B%E7%BB%8D%E5%8F%8A%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95/7.jpg" alt="7"><br>再次执行删除操作，还是会发出两次remove请求。</p>
 <h1 id="cors总结"><a href="#cors总结" class="headerlink" title="cors总结"></a>cors总结</h1><ul>
 <li><p>优点</p>
 </li>
