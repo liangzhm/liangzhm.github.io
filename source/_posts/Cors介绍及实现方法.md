@@ -16,19 +16,19 @@ Cors的使用需要浏览器和服务器端同时配合。目前所有浏览器�
 * 1.	在Request Headers中会自动添加一个额外的Origin头部，其中包含请求页面的资源信息（协议，域名和端口），以便服务器根据这个头部信息决定是否给予响应。
 比如，我在本地搭了一套前端环境，搭了一套nodejs后端环境，前端请求页面是http://localhost:9898，服务器地址是http://localhost:7001 。如下图。
 
-![1](1.jpg)
+![1](https://liangzhm.github.io/2019/02/21/Cors%E4%BB%8B%E7%BB%8D%E5%8F%8A%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95/1.jpg)
  
 * 2.	如果服务器认为这个请求可以接受，就在Access-Control-Allow-Origin 头
 部中回应相同的源信息。如下图所示。Access-Control-Allow-Origin代表可以同意的跨域请求，这个字段也能设置为*号，代表同意任意的跨域请求。
-![2](2.jpg)
+![2](https://liangzhm.github.io/2019/02/21/Cors%E4%BB%8B%E7%BB%8D%E5%8F%8A%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95/2.jpg)
  
 * 3.	如果没有这个头部或者有这个头部但是源信息不匹配，浏览器就会驳回请求。
 正常情况下，浏览器会处理请求。这里需要注意的是，请求和响应都不包含 cookie 信息。
 当前请求的域名是localhost:9898，但是服务器端返回的Access-Control-
 Allow-Origin是localhost：9899，浏览器发现不一致，就会报错，报错信息中也显示localhost：9898不允许接入访问（也就是跨域了）。
- ![3](3.jpg)
+ ![3](https://liangzhm.github.io/2019/02/21/Cors%E4%BB%8B%E7%BB%8D%E5%8F%8A%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95/3.jpg)
 报错信息如下图所示：
- ![4](4.png)
+ ![4](https://liangzhm.github.io/2019/02/21/Cors%E4%BB%8B%E7%BB%8D%E5%8F%8A%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95/4.png)
 * 4.	CORS请求是默认不发送Cookie信息的，如果要把cookie 信息发送到服务
 器，那么需要在ajax 请求时设置 xhr 的属性 withCredentials 为 true，而且服务器端也需要设置响应头部 Access-Control-Allow-Credentials: true。前端代码如下所示：
 var xhr = new XMLHttpRequest();
@@ -41,9 +41,9 @@ xhr.withCredentials = true;
 * 1.	发送预检请求
 
 浏览器在发送真正的请求之前，会先发送一个“预检”请求给服务器。如下图所示，在我点击删除按钮后，浏览器发出两个remove请求。
- ![5](5.jpg)
+ ![5](https://liangzhm.github.io/2019/02/21/Cors%E4%BB%8B%E7%BB%8D%E5%8F%8A%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95/5.jpg)
 第一个remove请求就是预检请求，这个请求使用 OPTIONS 方法，表示是来询问的。发送的头信息如下图所示。
- ![6](6.jpg)
+ ![6](https://liangzhm.github.io/2019/02/21/Cors%E4%BB%8B%E7%BB%8D%E5%8F%8A%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95/6.jpg)
 Origin：表示来自哪个域名，与简单请求是相同的。
 Access-Control-Request-Method: （必须）请求自身使用的方法，当前是delete。
 Access-Control-Request-Headers: （可选）自定义的头部信息，多个头部以逗号分隔，默认是conten-type。
@@ -56,7 +56,7 @@ Access-Control-Request-Headers: （可选）自定义的头部信息，多个头
 * 3.	浏览器正常的请求和回应
 
 一旦服务器通过了预检请求，也就是匹配上了，就会正常发出cors请求，和简单请求一样。如下图所示。
- ![7](7.jpg)
+ ![7](https://liangzhm.github.io/2019/02/21/Cors%E4%BB%8B%E7%BB%8D%E5%8F%8A%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95/7.jpg)
 再次执行删除操作，还是会发出两次remove请求。
 # cors总结
 * 优点
