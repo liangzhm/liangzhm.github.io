@@ -106,10 +106,11 @@ axios.defaults.withCredentials = true; //让axios自动发送服务器cookie
 ### 简单请求结果
 * 刷新页面，调用list接口，页面发出get请求，返回code：200，请求过程和返回结果如下图。
  ![8](https://liangzhm.github.io/2019/02/21/Cors%E4%BB%8B%E7%BB%8D%E5%8F%8A%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95/8.jpg)
- ![9](https://liangzhm.github.io/2019/02/21/Cors%E4%BB%8B%E7%BB%8D%E5%8F%8A%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95/9.png)
+ ![9](https://liangzhm.github.io/2019/02/21/Cors%E4%BB%8B%E7%BB%8D%E5%8F%8A%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95/9.jpg)
 ### 复杂请求结果
 * 点击页面执行删除接口，页面发出delete请求，返回code：200，请求过程和返回结果如下图。
  ![10](https://liangzhm.github.io/2019/02/21/Cors%E4%BB%8B%E7%BB%8D%E5%8F%8A%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95/10.jpg)
  ![11](https://liangzhm.github.io/2019/02/21/Cors%E4%BB%8B%E7%BB%8D%E5%8F%8A%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95/11.jpg)
+* 从图中可以看出，通过在服务器端设置cors，可以正常进行跨域请求，拿到数据。
 
 ## 结束
