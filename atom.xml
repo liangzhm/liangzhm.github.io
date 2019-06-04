@@ -6,10 +6,31 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://github.com/liangzhm/"/>
-  <updated>2019-03-28T02:41:57.863Z</updated>
+  <updated>2019-06-04T07:39:47.027Z</updated>
   <id>https://github.com/liangzhm/</id>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>如何将vue项目部署到heroku上供外网访问</title>
+    <link href="https://github.com/liangzhm/2019/06/04/%E5%A6%82%E4%BD%95%E5%B0%86vue%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E5%88%B0heroku%E4%B8%8A%E4%BE%9B%E5%A4%96%E7%BD%91%E8%AE%BF%E9%97%AE/"/>
+    <id>https://github.com/liangzhm/2019/06/04/如何将vue项目部署到heroku上供外网访问/</id>
+    <published>2019-06-04T07:06:47.000Z</published>
+    <updated>2019-06-04T07:39:47.027Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="1-在heroku网站上注册账号"><a href="#1-在heroku网站上注册账号" class="headerlink" title="1. 在heroku网站上注册账号"></a>1. 在heroku网站上注册账号</h2><p><a href="https://www.heroku.com/" target="_blank" rel="noopener">https://www.heroku.com/</a></p><h2 id="2-安装heroku-cli"><a href="#2-安装heroku-cli" class="headerlink" title="2. 安装heroku-cli"></a>2. 安装heroku-cli</h2><p><a href="https://devcenter.heroku.com/articles/heroku-cli#download-and-install" target="_blank" rel="noopener">https://devcenter.heroku.com/articles/heroku-cli#download-and-install</a><br>全局安装heroku命令<br>npm install -g heroku<br>查看版本<br>heroku –version<br>开始登陆<br>heroku login<br>会自动打开浏览器，登陆后，显示done</p><h2 id="3-创建app"><a href="#3-创建app" class="headerlink" title="3. 创建app"></a>3. 创建app</h2><p>  进入项目根目录 cd myapp<br>  创建heroku项目 heroku create 会随机生成一个名称，在网站内可以看到，同时也是以后的访问路径前缀</p><h2 id="4-修改配置文件"><a href="#4-修改配置文件" class="headerlink" title="4. 修改配置文件"></a>4. 修改配置文件</h2><p>部署前记得将配置文件中baseUrl改为’./‘<br>将.gitignore文件中的dist一行注释掉，需要将dist目录提交到master分支</p><h2 id="5-修改package-json"><a href="#5-修改package-json" class="headerlink" title="5. 修改package.json"></a>5. 修改package.json</h2><p>   在package.json 文件中的scripts中增加以下两句：<br>   “postinstall”: “npm run build”,<br>   “start”: “node server.js”</p><h2 id="6-在项目根目录下创建server-js文件"><a href="#6-在项目根目录下创建server-js文件" class="headerlink" title="6. 在项目根目录下创建server.js文件"></a>6. 在项目根目录下创建server.js文件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">const express = require(&apos;express&apos;);</span><br><span class="line">const path = require(&apos;path&apos;);</span><br><span class="line">const serverStatic = require(&apos;serve-static&apos;);</span><br><span class="line"></span><br><span class="line">const app = express();</span><br><span class="line">app.use(serverStatic(path.join(__dirname, &apos;dist&apos;)));</span><br><span class="line">const port = process.env.PORT || 5000;</span><br><span class="line">app.listen(port);</span><br><span class="line">console.log(port);</span><br></pre></td></tr></table></figure><p>同时记得npm i 上面那些包</p><h1 id="7-打包"><a href="#7-打包" class="headerlink" title="7. 打包"></a>7. 打包</h1><p>   npm run build 一下，然后提交到master分支</p><h1 id="8-将heroku和github进行关联"><a href="#8-将heroku和github进行关联" class="headerlink" title="8. 将heroku和github进行关联"></a>8. 将heroku和github进行关联</h1><p>   运行 heroku git:remote -a floating-sands-17593（刚才生成的随机项目名字）</p><h1 id="9-设置heroku配置"><a href="#9-设置heroku配置" class="headerlink" title="9. 设置heroku配置"></a>9. 设置heroku配置</h1><p>   运行 heroku config:set NPM_CONFIG_PRODUCTION=false<br>   NPM_CONFIG_PRODUCTION=false的意思是既安装dependencies里的依赖，也安装devDependencies里的依赖</p><h1 id="10-设置heroku执行语言"><a href="#10-设置heroku执行语言" class="headerlink" title="10. 设置heroku执行语言"></a>10. 设置heroku执行语言</h1><p>  运行 heroku buildpacks:set heroku/nodejs<br>  意思是让heroku以nodejs的服务运行</p><h1 id="11-部署"><a href="#11-部署" class="headerlink" title="11. 部署"></a>11. 部署</h1><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m&quot;bushu&quot;</span><br><span class="line">git push heroku master</span><br></pre></td></tr></table></figure></code></pre><p>可以看到部署的进度和部署状态，后面有部署的网址，打开即可看到网址已经成功的部署到外网可以访问。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;1-在heroku网站上注册账号&quot;&gt;&lt;a href=&quot;#1-在heroku网站上注册账号&quot; class=&quot;headerlink&quot; title=&quot;1. 在heroku网站上注册账号&quot;&gt;&lt;/a&gt;1. 在heroku网站上注册账号&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;htt
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>浅谈函数的防抖和节流</title>
