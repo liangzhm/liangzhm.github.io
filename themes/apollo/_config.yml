@@ -1,0 +1,34 @@
+menu:
+    Blog: /
+    Archive: /archives/
+   # Weibo: http://weibo.com/sunchongsheng
+    GitHub: https://github.com/liangzhm
+   # Rss: /atom.xml
+
+favicon: /favicon.png
+logo: /favicon.png
+
+# Comment
+# e.g disqus: seansun
+valine:
+  enable: true
+  app_id: B3xcjTWq77EgT99KmwW2D037-gzGzoHsz
+  app_key: qDSExhsQY3zUDDUz3QvjjWcc
+  notify: false # mail notifier , https://github.com/xCss/Valine/wiki
+  verify: false # Verification code
+  placeholder: ヾﾉ≧∀≦)o 来呀！快活呀！~
+  avatar: mm # gravatar style
+  guest_info: nick,mail,link # custom comment header
+  pageSize: 10 # pagination size
+
+disqus:
+duoshuo:
+
+# Analytics
+# google-analytics:
+# ga: UA-xxxxxxxx-x
+
+# Copyright Infomation
+startyear: 2015
+
+
